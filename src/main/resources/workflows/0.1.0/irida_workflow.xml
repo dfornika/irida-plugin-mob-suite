@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iridaWorkflow>
+  <id></id>
+  <name>MLST</name>
+  <version>0.1.0</version>
+  <analysisType>PLASMID_MOB_SUITE</analysisType>
+  <inputs>
+    <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
+    <requiresSingleSample>true</requiresSingleSample>
+  </inputs>
+  <parameters>
+  </parameters>
+  <outputs>
+  </outputs>
+  <toolRepositories>
+    <repository>
+      <name>mob_suite</name>
+      <owner>nml</owner>
+      <url>https://toolshed.g2.bx.psu.edu/</url>
+      <revision>1c5dfecfbb4d</revision>
+    </repository>
+</iridaWorkflow>
