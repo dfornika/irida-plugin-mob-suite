@@ -17,13 +17,18 @@
                 }
             ],
             "input_connections": {},
-            "tool_state": "{\"collection_type\": \"list:paired\"}",
+            "tool_state": "{\"collection_type\": \"list:paired\", \"name\": \"sequence_reads_paired\"}",
             "id": 0,
             "uuid": "d80f4fe7-955c-42f5-a713-8ae8322f7e4d",
             "errors": null,
             "name": "Input dataset collection",
             "label": "sequence_reads_paired",
-            "inputs": [],
+            "inputs": [
+                {
+                    "name": "sequence_reads_paired",
+                    "description": ""
+                }
+            ],
             "position": {
                 "top": 199.5,
                 "left": 108
