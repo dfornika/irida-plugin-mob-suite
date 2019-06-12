@@ -1,0 +1,220 @@
+{
+    "uuid": "67daede2-8c1a-4188-ae75-94bb6ea7e5e9",
+    "tags": [],
+    "format-version": "0.1",
+    "name": "MOB-Suite",
+    "version": 3,
+    "steps": {
+        "0": {
+            "tool_id": null,
+            "tool_version": null,
+            "outputs": [],
+            "workflow_outputs": [
+                {
+                    "output_name": "output",
+                    "uuid": "6b1f1529-1387-45f2-a6cc-e14a11383147",
+                    "label": null
+                }
+            ],
+            "input_connections": {},
+            "tool_state": "{\"collection_type\": \"list:paired\"}",
+            "id": 0,
+            "uuid": "d80f4fe7-955c-42f5-a713-8ae8322f7e4d",
+            "errors": null,
+            "name": "Input dataset collection",
+            "label": "sequence_reads_paired",
+            "inputs": [],
+            "position": {
+                "top": 199.5,
+                "left": 108
+            },
+            "annotation": "",
+            "content_id": null,
+            "type": "data_collection_input"
+        },
+        "1": {
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.7.0",
+            "tool_version": "0.4.7.0",
+            "outputs": [
+                {
+                    "type": "tabular",
+                    "name": "assembly_graph"
+                },
+                {
+                    "type": "fasta",
+                    "name": "assembly"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "assembly",
+                    "uuid": "068833a0-213a-45ca-b5e8-11dd552cdf4f",
+                    "label": null
+                },
+                {
+                    "output_name": "assembly_graph",
+                    "uuid": "f9d4139a-5b19-4918-81de-19da13958022",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "paired_unpaired|fastq_input1": {
+                    "output_name": "output",
+                    "id": 0
+                }
+            },
+            "tool_state": "{\"linear_seqs\": \"\\\"0\\\"\", \"spades\": \"{\\\"depth_filter\\\": \\\"0.25\\\", \\\"kmer_count\\\": \\\"10\\\", \\\"kmers\\\": \\\"\\\", \\\"max_kmer_frac\\\": \\\"0.95\\\", \\\"min_kmer_frac\\\": \\\"0.2\\\", \\\"no_correct\\\": \\\"false\\\"}\", \"graph_clean\": \"{\\\"min_component_size\\\": \\\"1000\\\", \\\"min_dead_end_size\\\": \\\"1000\\\"}\", \"__page__\": null, \"min_anchor_seg_len\": \"\\\"\\\"\", \"__rerun_remap_job_id__\": null, \"lr_align\": \"{\\\"contamination\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"low_score\\\": \\\"\\\", \\\"scores\\\": \\\"3,-6,-5,-2\\\"}\", \"long\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"paired_unpaired\": \"{\\\"__current_case__\\\": 1, \\\"fastq_input1\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}, \\\"fastq_input_selector\\\": \\\"paired_collection\\\"}\", \"min_fasta_length\": \"\\\"100\\\"\", \"mode\": \"\\\"normal\\\"\", \"rotation\": \"{\\\"no_rotate\\\": \\\"false\\\", \\\"start_gene_cov\\\": \\\"95.0\\\", \\\"start_gene_id\\\": \\\"90.0\\\", \\\"start_genes\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"pilon\": \"{\\\"min_polish_size\\\": \\\"1000\\\", \\\"no_pilon\\\": \\\"false\\\"}\"}",
+            "id": 1,
+            "tool_shed_repository": {
+                "owner": "iuc",
+                "changeset_revision": "0a3a602cd1e3",
+                "name": "unicycler",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "uuid": "c4a19b47-38e3-4af5-b801-1a4f78e3f208",
+            "errors": null,
+            "name": "Create assemblies with Unicycler",
+            "post_job_actions": {
+                "DeleteIntermediatesActionassembly_graph": {
+                    "output_name": "assembly_graph",
+                    "action_type": "DeleteIntermediatesAction",
+                    "action_arguments": {}
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "lr_align",
+                    "description": "runtime parameter for tool Create assemblies with Unicycler"
+                },
+                {
+                    "name": "long",
+                    "description": "runtime parameter for tool Create assemblies with Unicycler"
+                },
+                {
+                    "name": "rotation",
+                    "description": "runtime parameter for tool Create assemblies with Unicycler"
+                }
+            ],
+            "position": {
+                "top": 188.5,
+                "left": 468
+            },
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.7.0",
+            "type": "tool"
+        },
+        "2": {
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/1.4.8",
+            "tool_version": "1.4.8",
+            "outputs": [
+                {
+                    "type": "input",
+                    "name": "seqhits"
+                },
+                {
+                    "type": "tabular",
+                    "name": "outfile1"
+                },
+                {
+                    "type": "tabular",
+                    "name": "outfile2"
+                },
+                {
+                    "type": "tabular",
+                    "name": "outfile3"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "outfile2",
+                    "uuid": "877bccf0-5d1b-4895-b482-eafb699c6714",
+                    "label": null
+                },
+                {
+                    "output_name": "outfile3",
+                    "uuid": "01f35e49-4874-41e5-91bb-2f617fdc91ce",
+                    "label": null
+                },
+                {
+                    "output_name": "outfile1",
+                    "uuid": "30356c3e-8c26-4298-acc5-a2a5b01afb98",
+                    "label": null
+                },
+                {
+                    "output_name": "seqhits",
+                    "uuid": "22591951-1f68-4d5d-84a7-59314ec00608",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "input": {
+                    "output_name": "assembly",
+                    "id": 1
+                }
+            },
+            "tool_state": "{\"adv_param\": \"{\\\"min_con_evalue\\\": \\\"1e-05\\\", \\\"min_con_ident\\\": \\\"80\\\", \\\"min_length_condition\\\": {\\\"__current_case__\\\": 1, \\\"min_length_param\\\": \\\"False\\\"}, \\\"min_mob_evalue\\\": \\\"1e-05\\\", \\\"min_mob_ident\\\": \\\"80\\\", \\\"min_rep_evalue\\\": \\\"1e-05\\\", \\\"min_rep_ident\\\": \\\"80\\\", \\\"min_rpp_evalue\\\": \\\"1e-05\\\", \\\"min_rpp_ident\\\": \\\"80\\\", \\\"run_circlator\\\": \\\"True\\\", \\\"unicycler_contigs\\\": \\\"True\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"__page__\": null}",
+            "id": 2,
+            "tool_shed_repository": {
+                "owner": "nml",
+                "changeset_revision": "1c5dfecfbb4d",
+                "name": "mob_suite",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "uuid": "c9530a24-ad8e-4de6-8917-095cc1fe2f4e",
+            "errors": null,
+            "name": "MOB-Recon",
+            "post_job_actions": {
+                "RenameDatasetActionoutfile1": {
+                    "output_name": "outfile1",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "mob_recon_report.tsv"
+                    }
+                },
+                "RenameDatasetActionseqhits": {
+                    "output_name": "seqhits",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "plasmids.fasta"
+                    }
+                },
+                "TagDatasetActionoutfile2": {
+                    "output_name": "outfile2",
+                    "action_type": "TagDatasetAction",
+                    "action_arguments": {
+                        "tags": "repetitive_elements.tsv"
+                    }
+                },
+                "RenameDatasetActionoutfile3": {
+                    "output_name": "outfile3",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "mob_typer_report.tsv"
+                    }
+                },
+                "DeleteIntermediatesActionseqhits": {
+                    "output_name": "seqhits",
+                    "action_type": "DeleteIntermediatesAction",
+                    "action_arguments": {}
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "runtime parameter for tool MOB-Recon"
+                }
+            ],
+            "position": {
+                "top": 191.5,
+                "left": 855.5
+            },
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/1.4.8",
+            "type": "tool"
+        }
+    },
+    "annotation": "",
+    "a_galaxy_workflow": "true"
+}

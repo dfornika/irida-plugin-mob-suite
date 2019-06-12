@@ -1,22 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iridaWorkflow>
-  <id></id>
-  <name>MLST</name>
+  <id>cae377e8-236f-4fc7-8515-f644ea6e0bcb</id>
+  <name>MOB-Suite</name>
   <version>0.1.0</version>
-  <analysisType>PLASMID_MOB_SUITE</analysisType>
+  <analysisType>MOB_SUITE</analysisType>
   <inputs>
     <sequenceReadsPaired>sequence_reads_paired</sequenceReadsPaired>
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
+    <parameter name="unicycler-mode" defaultValue="normal">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.7.0" parameterName="mode"/>
+    </parameter>
+    <parameter name="unicycler-min_fasta_length" defaultValue="100">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.7.0" parameterName="min_fasta_length"/>
+    </parameter>
   </parameters>
   <outputs>
+    <output name="mob_recon_report" fileName="mob_recon_report.tsv"/>
+    <output name="mob_typer_report" fileName="mob_typer_report.tsv"/>
+    <output name="plasmid_contigs" fileName="plasmids.fasta"/>
+    <output name="repetitive_elements" fileName="repetitive_elements.tsv"/>
   </outputs>
   <toolRepositories>
+    <repository>
+      <name>unicycler</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu/</url>
+      <revision>0a3a602cd1e3</revision>
+    </repository>
     <repository>
       <name>mob_suite</name>
       <owner>nml</owner>
       <url>https://toolshed.g2.bx.psu.edu/</url>
       <revision>1c5dfecfbb4d</revision>
     </repository>
+  </toolRepositories>
 </iridaWorkflow>

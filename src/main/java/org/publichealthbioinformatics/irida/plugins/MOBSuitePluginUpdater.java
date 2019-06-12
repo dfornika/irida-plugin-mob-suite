@@ -117,6 +117,6 @@ public class MOBSuitePluginUpdater implements AnalysisSampleUpdater {
 	 */
 	@Override
 	public AnalysisType getAnalysisType() {
-		return MOBSuitePlugin.PLASMID_MOB_SUITE;
+		return MOBSuitePlugin.MOB_SUITE;
 	}
 }

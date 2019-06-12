@@ -25,7 +25,7 @@ public class MOBSuitePlugin extends Plugin {
 	 * is used to store the type of the analysis pipeline (which should be unique
 	 * for each pipeline).
 	 */
-	public static final AnalysisType PLASMID_MOB_SUITE = new AnalysisType("PLASMID_MOB_SUITE");
+	public static final AnalysisType MOB_SUITE = new AnalysisType("MOB_SUITE");
 
 	public MOBSuitePlugin(PluginWrapper wrapper) {
 		super(wrapper);
@@ -59,7 +59,7 @@ public class MOBSuitePlugin extends Plugin {
 		 */
 		@Override
 		public AnalysisType getAnalysisType() {
-			return PLASMID_MOB_SUITE;
+			return MOB_SUITE;
 		}
 
 		/**
@@ -74,7 +74,7 @@ public class MOBSuitePlugin extends Plugin {
 		 */
 		@Override
 		public UUID getDefaultWorkflowUUID() {
-			return UUID.fromString("");
+			return UUID.fromString("cae377e8-236f-4fc7-8515-f644ea6e0bcb");
 		}
 
 		/*******************************************************************************
