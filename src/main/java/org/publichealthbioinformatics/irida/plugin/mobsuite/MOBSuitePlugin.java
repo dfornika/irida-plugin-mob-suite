@@ -1,9 +1,11 @@
-package ca.corefacility.bioinformatics.irida.plugins;
+package org.publichealthbioinformatics.irida.plugin.mobsuite;
 
 import java.awt.Color;
 import java.util.Optional;
 import java.util.UUID;
 
+import ca.corefacility.bioinformatics.irida.plugins.IridaPlugin;
+import ca.corefacility.bioinformatics.irida.plugins.IridaPluginException;
 import org.pf4j.Extension;
 import org.pf4j.Plugin;
 import org.pf4j.PluginWrapper;

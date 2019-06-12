@@ -1,4 +1,4 @@
-package ca.corefacility.bioinformatics.irida.plugins;
+package org.publichealthbioinformatics.irida.plugin.mobsuite;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -74,13 +74,12 @@ public class MOBSuitePluginUpdater implements AnalysisSampleUpdater {
 					"samples size=" + samples.size() + " is not 1 for analysisSubmission=" + analysisSubmission.getId());
 		}
 
-		// extract the 1 and only sample (if more than 1, would have thrown an exception
-		// above)
+		// extract the 1 and only sample (if more than 1, would have thrown an exception above)
 		final Sample sample = samples.iterator().next();
 
 		// extracts paths to the analysis result files
-		AnalysisOutputFile mlstAnalysisFile = analysisSubmission.getAnalysis().getAnalysisOutputFile("mlst");
-		Path mlstFile = mlstAnalysisFile.getFile();
+		AnalysisOutputFile mobReconAnalysisFile = analysisSubmission.getAnalysis().getAnalysisOutputFile("mob_recon_report");
+		Path mlstFile = mobReconAnalysisFile.getFile();
 
 		try {
 			Map<String, MetadataEntry> metadataEntries = new HashMap<>();
@@ -90,8 +89,6 @@ public class MOBSuitePluginUpdater implements AnalysisSampleUpdater {
 			String workflowVersion = iridaWorkflow.getWorkflowDescription().getVersion();
 			String workflowName = iridaWorkflow.getWorkflowDescription().getName();
 
-
-
 			Map<MetadataTemplateField, MetadataEntry> metadataMap = metadataTemplateService
 					.getMetadataMap(metadataEntries);
 
@@ -100,8 +97,6 @@ public class MOBSuitePluginUpdater implements AnalysisSampleUpdater {
 
 			// does an update of the sample metadata
 			sampleService.updateFields(sample.getId(), ImmutableMap.of("metadata", sample.getMetadata()));
-		} catch (IOException e) {
-			throw new PostProcessingException("Error parsing hash file", e);
 		} catch (IridaWorkflowNotFoundException e) {
 			throw new PostProcessingException("Could not find workflow for id=" + analysisSubmission.getWorkflowId(), e);
 		}
