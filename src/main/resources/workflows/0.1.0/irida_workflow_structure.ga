@@ -1,9 +1,9 @@
 {
-    "uuid": "67daede2-8c1a-4188-ae75-94bb6ea7e5e9",
+    "uuid": "f74a77aa-e32c-4166-b831-2f405055d9db",
     "tags": [],
     "format-version": "0.1",
     "name": "MOB-Suite",
-    "version": 3,
+    "version": 5,
     "steps": {
         "0": {
             "tool_id": null,
@@ -179,18 +179,18 @@
                         "newname": "plasmids.fasta"
                     }
                 },
-                "TagDatasetActionoutfile2": {
-                    "output_name": "outfile2",
-                    "action_type": "TagDatasetAction",
-                    "action_arguments": {
-                        "tags": "repetitive_elements.tsv"
-                    }
-                },
                 "RenameDatasetActionoutfile3": {
                     "output_name": "outfile3",
                     "action_type": "RenameDatasetAction",
                     "action_arguments": {
                         "newname": "mob_typer_report.tsv"
+                    }
+                },
+                "TagDatasetActionoutfile2": {
+                    "output_name": "outfile2",
+                    "action_type": "TagDatasetAction",
+                    "action_arguments": {
+                        "tags": "repetitive_elements.tsv"
                     }
                 },
                 "DeleteIntermediatesActionseqhits": {
@@ -212,6 +212,117 @@
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/1.4.8",
+            "type": "tool"
+        },
+        "3": {
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy0",
+            "tool_version": "5.0.2+galaxy0",
+            "outputs": [
+                {
+                    "type": "tabular",
+                    "name": "quast_tabular"
+                },
+                {
+                    "type": "html",
+                    "name": "report_html"
+                },
+                {
+                    "type": "pdf",
+                    "name": "report_pdf"
+                },
+                {
+                    "type": "txt",
+                    "name": "log"
+                },
+                {
+                    "type": "tabular",
+                    "name": "mis_ass"
+                },
+                {
+                    "type": "tabular",
+                    "name": "unalign"
+                },
+                {
+                    "type": "tabular",
+                    "name": "kmers"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "quast_tabular",
+                    "uuid": "d0051d2b-3c74-4a0d-a6bb-90dad32d4b37",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "in|inputs": {
+                    "output_name": "assembly",
+                    "id": 1
+                }
+            },
+            "tool_state": "{\"scaffold_gap_max_size\": \"\\\"1000\\\"\", \"skip_unaligned_mis_contigs\": \"\\\"true\\\"\", \"assembly\": \"{\\\"__current_case__\\\": 0, \\\"orga_type\\\": \\\"\\\", \\\"ref\\\": {\\\"__current_case__\\\": 1, \\\"est_ref_size\\\": \\\"\\\", \\\"use_ref\\\": \\\"false\\\"}, \\\"type\\\": \\\"genome\\\"}\", \"circos\": \"\\\"false\\\"\", \"contig_thresholds\": \"\\\"0,1000\\\"\", \"__page__\": null, \"strict_NA\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"genes\": \"{\\\"conserved_genes_finding\\\": \\\"false\\\", \\\"gene_finding\\\": {\\\"__current_case__\\\": 0, \\\"tool\\\": \\\"none\\\"}, \\\"rna_finding\\\": \\\"false\\\"}\", \"unaligned_part_size\": \"\\\"500\\\"\", \"al\": \"{\\\"ambiguity_score\\\": \\\"0.99\\\", \\\"ambiguity_usage\\\": \\\"one\\\", \\\"fragmented\\\": \\\"false\\\", \\\"fragmented_max_indent\\\": \\\"50\\\", \\\"min_alignment\\\": \\\"65\\\", \\\"min_identity\\\": \\\"95.0\\\", \\\"upper_bound_assembly\\\": \\\"false\\\", \\\"upper_bound_min_con\\\": \\\"2\\\", \\\"use_all_alignments\\\": \\\"false\\\"}\", \"extensive_mis_size\": \"\\\"1000\\\"\", \"large\": \"\\\"false\\\"\", \"in\": \"{\\\"__current_case__\\\": 1, \\\"custom\\\": \\\"false\\\", \\\"inputs\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"k_mer\": \"{\\\"__current_case__\\\": 1, \\\"k_mer_stats\\\": \\\"\\\"}\", \"split_scaffolds\": \"\\\"false\\\"\", \"min_contig\": \"\\\"500\\\"\"}",
+            "id": 3,
+            "tool_shed_repository": {
+                "owner": "iuc",
+                "changeset_revision": "f30d03867854",
+                "name": "quast",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "uuid": "b8b20b0e-7157-4166-ad43-6a0fba15a832",
+            "errors": null,
+            "name": "Quast",
+            "post_job_actions": {
+                "HideDatasetActionreport_html": {
+                    "output_name": "report_html",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionkmers": {
+                    "output_name": "kmers",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionreport_pdf": {
+                    "output_name": "report_pdf",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "RenameDatasetActionquast_tabular": {
+                    "output_name": "quast_tabular",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "quast.tsv"
+                    }
+                },
+                "HideDatasetActionunalign": {
+                    "output_name": "unalign",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionmis_ass": {
+                    "output_name": "mis_ass",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionlog": {
+                    "output_name": "log",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "in",
+                    "description": "runtime parameter for tool Quast"
+                }
+            ],
+            "position": {
+                "top": 582.5,
+                "left": 864.5
+            },
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy0",
             "type": "tool"
         }
     },

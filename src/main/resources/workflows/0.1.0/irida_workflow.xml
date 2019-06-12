@@ -21,6 +21,7 @@
     <output name="mob_typer_report" fileName="mob_typer_report.tsv"/>
     <output name="plasmid_contigs" fileName="plasmids.fasta"/>
     <output name="repetitive_elements" fileName="repetitive_elements.tsv"/>
+    <output name="assembly_quality" fileName="quast.tsv"/>
   </outputs>
   <toolRepositories>
     <repository>
@@ -28,6 +29,12 @@
       <owner>iuc</owner>
       <url>https://toolshed.g2.bx.psu.edu/</url>
       <revision>0a3a602cd1e3</revision>
+    </repository>
+    <repository>
+      <name>quast</name>
+      <owner>iuc</owner>
+      <url>https://toolshed.g2.bx.psu.edu/</url>
+      <revision>81df4950d65b</revision>
     </repository>
     <repository>
       <name>mob_suite</name>
