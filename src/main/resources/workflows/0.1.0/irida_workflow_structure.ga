@@ -1,9 +1,9 @@
 {
-    "uuid": "f74a77aa-e32c-4166-b831-2f405055d9db",
+    "uuid": "8aa9fb21-02e3-41bb-b5bf-e99ae8519aae",
     "tags": [],
     "format-version": "0.1",
     "name": "MOB-Suite",
-    "version": 5,
+    "version": 2,
     "steps": {
         "0": {
             "tool_id": null,
@@ -110,8 +110,8 @@
             "type": "tool"
         },
         "2": {
-            "tool_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/1.4.8",
-            "tool_version": "1.4.8",
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/mob_suite/mob_recon/1.4.9.1",
+            "tool_version": "1.4.9.1",
             "outputs": [
                 {
                     "type": "input",
@@ -133,22 +133,22 @@
             "workflow_outputs": [
                 {
                     "output_name": "outfile2",
-                    "uuid": "877bccf0-5d1b-4895-b482-eafb699c6714",
+                    "uuid": "d42c427e-0351-4948-be63-582f0a3f58c5",
                     "label": null
                 },
                 {
                     "output_name": "outfile3",
-                    "uuid": "01f35e49-4874-41e5-91bb-2f617fdc91ce",
+                    "uuid": "40957ab5-ccd7-47aa-95cd-09c74a85e3a7",
                     "label": null
                 },
                 {
                     "output_name": "outfile1",
-                    "uuid": "30356c3e-8c26-4298-acc5-a2a5b01afb98",
+                    "uuid": "f94a28b4-8f7a-4bc0-9268-438a0ffd154e",
                     "label": null
                 },
                 {
                     "output_name": "seqhits",
-                    "uuid": "22591951-1f68-4d5d-84a7-59314ec00608",
+                    "uuid": "34135c2e-e3fe-438f-8e09-685fd64bca2a",
                     "label": null
                 }
             ],
@@ -158,15 +158,15 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"adv_param\": \"{\\\"min_con_evalue\\\": \\\"1e-05\\\", \\\"min_con_ident\\\": \\\"80\\\", \\\"min_length_condition\\\": {\\\"__current_case__\\\": 1, \\\"min_length_param\\\": \\\"False\\\"}, \\\"min_mob_evalue\\\": \\\"1e-05\\\", \\\"min_mob_ident\\\": \\\"80\\\", \\\"min_rep_evalue\\\": \\\"1e-05\\\", \\\"min_rep_ident\\\": \\\"80\\\", \\\"min_rpp_evalue\\\": \\\"1e-05\\\", \\\"min_rpp_ident\\\": \\\"80\\\", \\\"run_circlator\\\": \\\"True\\\", \\\"unicycler_contigs\\\": \\\"True\\\"}\", \"input\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"__page__\": null}",
+            "tool_state": "{\"__page__\": null, \"adv_param\": \"{\\\"min_con_evalue\\\": \\\"1e-05\\\", \\\"min_con_ident\\\": \\\"80\\\", \\\"min_length_condition\\\": {\\\"__current_case__\\\": 1, \\\"min_length_param\\\": \\\"False\\\"}, \\\"min_mob_evalue\\\": \\\"1e-05\\\", \\\"min_mob_ident\\\": \\\"80\\\", \\\"min_rep_evalue\\\": \\\"1e-05\\\", \\\"min_rep_ident\\\": \\\"80\\\", \\\"min_rpp_evalue\\\": \\\"1e-05\\\", \\\"min_rpp_ident\\\": \\\"80\\\", \\\"run_circlator\\\": \\\"True\\\", \\\"unicycler_contigs\\\": \\\"True\\\"}\", \"__rerun_remap_job_id__\": null, \"mob_suite_database_dir\": \"\\\"d185c8fd-fd44-4ca5-8e45-2673491679aa\\\"\", \"mob_suite_database\": \"\\\"d185c8fd-fd44-4ca5-8e45-2673491679aa\\\"\", \"input\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\"}",
             "id": 2,
             "tool_shed_repository": {
-                "owner": "nml",
-                "changeset_revision": "1c5dfecfbb4d",
+                "owner": "dfornika",
+                "changeset_revision": "0dc3dc9226e4",
                 "name": "mob_suite",
-                "tool_shed": "toolshed.g2.bx.psu.edu"
+                "tool_shed": "testtoolshed.g2.bx.psu.edu"
             },
-            "uuid": "c9530a24-ad8e-4de6-8917-095cc1fe2f4e",
+            "uuid": "365311f3-69a4-4f6c-a536-24adbdea8daa",
             "errors": null,
             "name": "MOB-Recon",
             "post_job_actions": {
@@ -191,32 +191,22 @@
                         "newname": "mob_typer_report.tsv"
                     }
                 },
-                "TagDatasetActionoutfile2": {
+                "RenameDatasetActionoutfile2": {
                     "output_name": "outfile2",
-                    "action_type": "TagDatasetAction",
+                    "action_type": "RenameDatasetAction",
                     "action_arguments": {
-                        "tags": "repetitive_elements.tsv"
+                        "newname": "repetitive_elements.tsv"
                     }
-                },
-                "DeleteIntermediatesActionseqhits": {
-                    "output_name": "seqhits",
-                    "action_type": "DeleteIntermediatesAction",
-                    "action_arguments": {}
                 }
             },
             "label": null,
-            "inputs": [
-                {
-                    "name": "input",
-                    "description": "runtime parameter for tool MOB-Recon"
-                }
-            ],
+            "inputs": [],
             "position": {
-                "top": 191.5,
-                "left": 855.5
+                "top": 190.5,
+                "left": 863.5
             },
             "annotation": "",
-            "content_id": "toolshed.g2.bx.psu.edu/repos/nml/mob_suite/mob_recon/1.4.8",
+            "content_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/mob_suite/mob_recon/1.4.9.1",
             "type": "tool"
         },
         "3": {
@@ -265,7 +255,7 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"scaffold_gap_max_size\": \"\\\"1000\\\"\", \"skip_unaligned_mis_contigs\": \"\\\"true\\\"\", \"assembly\": \"{\\\"__current_case__\\\": 0, \\\"orga_type\\\": \\\"\\\", \\\"ref\\\": {\\\"__current_case__\\\": 1, \\\"est_ref_size\\\": \\\"\\\", \\\"use_ref\\\": \\\"false\\\"}, \\\"type\\\": \\\"genome\\\"}\", \"circos\": \"\\\"false\\\"\", \"contig_thresholds\": \"\\\"0,1000\\\"\", \"__page__\": null, \"strict_NA\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"genes\": \"{\\\"conserved_genes_finding\\\": \\\"false\\\", \\\"gene_finding\\\": {\\\"__current_case__\\\": 0, \\\"tool\\\": \\\"none\\\"}, \\\"rna_finding\\\": \\\"false\\\"}\", \"unaligned_part_size\": \"\\\"500\\\"\", \"al\": \"{\\\"ambiguity_score\\\": \\\"0.99\\\", \\\"ambiguity_usage\\\": \\\"one\\\", \\\"fragmented\\\": \\\"false\\\", \\\"fragmented_max_indent\\\": \\\"50\\\", \\\"min_alignment\\\": \\\"65\\\", \\\"min_identity\\\": \\\"95.0\\\", \\\"upper_bound_assembly\\\": \\\"false\\\", \\\"upper_bound_min_con\\\": \\\"2\\\", \\\"use_all_alignments\\\": \\\"false\\\"}\", \"extensive_mis_size\": \"\\\"1000\\\"\", \"large\": \"\\\"false\\\"\", \"in\": \"{\\\"__current_case__\\\": 1, \\\"custom\\\": \\\"false\\\", \\\"inputs\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"k_mer\": \"{\\\"__current_case__\\\": 1, \\\"k_mer_stats\\\": \\\"\\\"}\", \"split_scaffolds\": \"\\\"false\\\"\", \"min_contig\": \"\\\"500\\\"\"}",
+            "tool_state": "{\"scaffold_gap_max_size\": \"\\\"1000\\\"\", \"skip_unaligned_mis_contigs\": \"\\\"true\\\"\", \"assembly\": \"{\\\"__current_case__\\\": 0, \\\"orga_type\\\": \\\"\\\", \\\"ref\\\": {\\\"__current_case__\\\": 1, \\\"est_ref_size\\\": \\\"\\\", \\\"use_ref\\\": \\\"false\\\"}, \\\"type\\\": \\\"genome\\\"}\", \"circos\": \"\\\"false\\\"\", \"contig_thresholds\": \"\\\"0,1000\\\"\", \"__page__\": null, \"strict_NA\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"genes\": \"{\\\"conserved_genes_finding\\\": \\\"false\\\", \\\"gene_finding\\\": {\\\"__current_case__\\\": 0, \\\"tool\\\": \\\"none\\\"}, \\\"rna_finding\\\": \\\"false\\\"}\", \"unaligned_part_size\": \"\\\"500\\\"\", \"al\": \"{\\\"ambiguity_score\\\": \\\"0.99\\\", \\\"ambiguity_usage\\\": \\\"one\\\", \\\"fragmented\\\": \\\"false\\\", \\\"fragmented_max_indent\\\": \\\"50\\\", \\\"min_alignment\\\": \\\"65\\\", \\\"min_identity\\\": \\\"95.0\\\", \\\"upper_bound_assembly\\\": \\\"false\\\", \\\"upper_bound_min_con\\\": \\\"2\\\", \\\"use_all_alignments\\\": \\\"false\\\"}\", \"extensive_mis_size\": \"\\\"1000\\\"\", \"large\": \"\\\"false\\\"\", \"in\": \"{\\\"__current_case__\\\": 1, \\\"custom\\\": \\\"false\\\", \\\"inputs\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}}\", \"k_mer\": \"{\\\"__current_case__\\\": 1, \\\"k_mer_stats\\\": \\\"\\\"}\", \"split_scaffolds\": \"\\\"false\\\"\", \"min_contig\": \"\\\"500\\\"\"}",
             "id": 3,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -316,18 +306,130 @@
                 }
             },
             "label": null,
-            "inputs": [
-                {
-                    "name": "in",
-                    "description": "runtime parameter for tool Quast"
-                }
-            ],
+            "inputs": [],
             "position": {
                 "top": 582.5,
                 "left": 864.5
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy0",
+            "type": "tool"
+        },
+        "4": {
+            "tool_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/mob_suite/separate_chromosome_from_plasmids/1.4.9.1",
+            "tool_version": "1.4.9.1",
+            "outputs": [
+                {
+                    "type": "input",
+                    "name": "plasmids"
+                },
+                {
+                    "type": "fasta",
+                    "name": "chromosome"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "chromosome",
+                    "uuid": "7788735a-c9b8-4ded-aa1f-ee5156fb4a3b",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "inputs": {
+                    "output_name": "seqhits",
+                    "id": 2
+                }
+            },
+            "tool_state": "{\"inputs\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null, \"__page__\": null}",
+            "id": 4,
+            "tool_shed_repository": {
+                "owner": "dfornika",
+                "changeset_revision": "0dc3dc9226e4",
+                "name": "mob_suite",
+                "tool_shed": "testtoolshed.g2.bx.psu.edu"
+            },
+            "uuid": "15c206a9-509f-4b5a-9585-8e0cc8b88727",
+            "errors": null,
+            "name": "Separate Chromosome from Plasmids",
+            "post_job_actions": {
+                "RenameDatasetActionchromosome": {
+                    "output_name": "chromosome",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "chromosome.fasta"
+                    }
+                },
+                "HideDatasetActionplasmids": {
+                    "output_name": "plasmids",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "inputs",
+                    "description": "runtime parameter for tool Separate Chromosome from Plasmids"
+                }
+            ],
+            "position": {
+                "top": 216.5,
+                "left": 1205.5
+            },
+            "annotation": "",
+            "content_id": "testtoolshed.g2.bx.psu.edu/repos/dfornika/mob_suite/separate_chromosome_from_plasmids/1.4.9.1",
+            "type": "tool"
+        },
+        "5": {
+            "tool_id": "cat1",
+            "tool_version": "1.0.0",
+            "outputs": [
+                {
+                    "type": "input",
+                    "name": "out_file1"
+                }
+            ],
+            "workflow_outputs": [
+                {
+                    "output_name": "out_file1",
+                    "uuid": "c49502ad-06c6-40f3-b256-d90ccd7ee2c8",
+                    "label": null
+                }
+            ],
+            "input_connections": {
+                "input1": {
+                    "output_name": "plasmids",
+                    "id": 4
+                }
+            },
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"input1\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"queries\": \"[]\"}",
+            "id": 5,
+            "uuid": "9e78b9d3-b050-4458-94f9-adfd23964642",
+            "errors": null,
+            "name": "Concatenate datasets",
+            "post_job_actions": {
+                "RenameDatasetActionout_file1": {
+                    "output_name": "out_file1",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "plasmids.fasta"
+                    }
+                }
+            },
+            "label": null,
+            "inputs": [
+                {
+                    "name": "input1",
+                    "description": "runtime parameter for tool Concatenate datasets"
+                }
+            ],
+            "position": {
+                "top": 195.5,
+                "left": 1612.5
+            },
+            "annotation": "",
+            "content_id": "cat1",
             "type": "tool"
         }
     },

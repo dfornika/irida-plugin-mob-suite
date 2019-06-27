@@ -9,6 +9,14 @@
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
+    <parameter name="plasmid_database" required="true">
+      <dynamicSource>
+        <galaxyToolDataTable name="mob_suite_databases" displayColumn="name" parameterColumn="value" />
+      </dynamicSource>
+      <toolParameter
+              toolId="testtoolshed.g2.bx.psu.edu/repos/dfornika/mob_suite/mob_recon/1.4.9.1"
+              parameterName="mob_suite_database" />
+    </parameter>
     <parameter name="unicycler-mode" defaultValue="normal">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/unicycler/unicycler/0.4.7.0" parameterName="mode"/>
     </parameter>
@@ -20,6 +28,7 @@
     <output name="mob_recon_report" fileName="mob_recon_report.tsv"/>
     <output name="mob_typer_report" fileName="mob_typer_report.tsv"/>
     <output name="plasmid_contigs" fileName="plasmids.fasta"/>
+    <output name="chromosome_contigs" fileName="chromosome.fasta"/>
     <output name="repetitive_elements" fileName="repetitive_elements.tsv"/>
     <output name="assembly_quality" fileName="quast.tsv"/>
   </outputs>
@@ -38,9 +47,9 @@
     </repository>
     <repository>
       <name>mob_suite</name>
-      <owner>nml</owner>
-      <url>https://toolshed.g2.bx.psu.edu/</url>
-      <revision>1c5dfecfbb4d</revision>
+      <owner>dfornika</owner>
+      <url>https://testtoolshed.g2.bx.psu.edu/</url>
+      <revision>dce4f8d7b19f</revision>
     </repository>
   </toolRepositories>
 </iridaWorkflow>

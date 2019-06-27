@@ -11,12 +11,12 @@
 	<properties>
 		<plugin.id>mob-suite</plugin.id>
 		<plugin.class>org.publichealthbioinformatics.irida.plugin.mobsuite.MOBSuitePlugin</plugin.class>
-		<plugin.version>0.1.0</plugin.version>
+		<plugin.version>0.1.0-SNAPSHOT</plugin.version>
 		<plugin.provider>Dan Fornika</plugin.provider>
 		<plugin.dependencies></plugin.dependencies>
 		<plugin.requires.runtime>1.0.0</plugin.requires.runtime>
 
-		<irida.version.compiletime>19.09-SNAPSHOT</irida.version.compiletime>
+		<irida.version.compiletime>19.01.3</irida.version.compiletime>
 		
 		<pf4j.version>2.4.0</pf4j.version>
 
